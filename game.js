@@ -57,6 +57,12 @@ function nextSequence() {
             playSound(gamePattern[i]);           
         }, 350 * i);
     }
+
+    // display effect of button for user: only last button of the sequence
+    // setTimeout(function() {
+    //     $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
+    //     playSound(randomChosenColour);
+    // }, 300);
 }
 
 // handles sound playing logic
