@@ -46,11 +46,17 @@ function nextSequence() {
     var randomChosenColour = buttonColours[randomNumber];
     gamePattern.push(randomChosenColour);
 
-    // display effect of button for user
-    setTimeout(function() {
-        $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
-        playSound(randomChosenColour);
-    }, 300);
+    // display effect of button for user: whole sequence display
+    for (var i = 0; i < gamePattern.length; i++){
+        delay(i);
+    }
+
+    function delay(i){
+        setTimeout(function(){
+            $("#" + gamePattern[i]).fadeIn(100).fadeOut(100).fadeIn(100);
+            playSound(gamePattern[i]);           
+        }, 350 * i);
+    }
 }
 
 // handles sound playing logic
